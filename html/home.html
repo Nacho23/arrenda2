@@ -19,9 +19,60 @@
                         <h4 class="modal-title">LOG IN</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <!-- RUT, nombre, apellido, img-perfil, tipo(arrendador, arrendatario) --> 
-                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">First Name/Family Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="nickname">Nickname</label>
+                                <input type="text" class="form-control" id="nickname">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="repeatPassword">Repeat Password</label>
+                                <input type="password" class="form-control" id="repeatPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="idNumber">ID Number</label>
+                                <input type="text" class="form-control" id="idNumber">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="birthdate_day">Birthdate</label>
+                                        <input type="text" class="form-control" id="birthdate_day" placeholder="dd">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="birthdate_month">Birthdate month</label>
+                                        <input type="text" class="form-control" id="birthdate_month" placeholder="mm">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="birthdate_year">Birthdate year</label>
+                                        <input type="text" class="form-control" id="birthdate_year" placeholder="aaaa">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone/Cell Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="569XXXXAAAA">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="xxxx@mail.com">
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
@@ -48,7 +99,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Help</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><a href="#" onclick="open_modal_login();">Log In</a></li>
                         <li>
                           <a class="btn btn-default btn-outline btn-circle collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
                         </li>
@@ -70,66 +121,62 @@
             </div><!-- /.container -->
         </nav>
 
-
-        <!-- PANEL LATERAL -->
-        <div class="profile">
-            <div class="col-md-3 profile-background">
-                <div class="profile-sidebar">
-                    <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img src="../images/cabana1.jpg" alt="">
-                    </div>
-                    <!-- END SIDEBAR USERPIC -->
-                    <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            Cabaña
-                        </div>
-                        <div class="profile-usertitle-job">
-                            Bueras #123
-                        </div>
-                    </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                    <!-- SIDEBAR BUTTONS -->
-                    <div class="profile-userbuttons">
-                        <button id="btn-contact" type="button" class="btn btn-success btn-lg">View More...</button>
-                    </div>
-                    <!-- END SIDEBAR BUTTONS -->
-                    <!-- SIDEBAR MENU -->
-                    <div class="profile-usermenu">
-                        <ul class="nav">
-                            <li class="active">
-                                <a href="#">
-                                <i class="glyphicon glyphicon-list-alt"></i>
-                                Description </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <i class="glyphicon glyphicon-user"></i>
-                                - </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
-                                - </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <i class="glyphicon glyphicon-user"></i>
-                                Contact </a>
-                            </li>
+        <div id="wrapper" style="margin-top: 50px">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+                    <li>
+                        <!-- MODIFICAR Y CARGAR DESDE EL SERVIDOR-->
+                        <img id="image-sidebar" src="../images/cabana1.jpg" alt="">
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-success btn-lg btn-view-more">View More</button>
+                    </li>
+                    <li class="active">
+                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Description</a>
+                        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
                         </ul>
-                    </div><!-- END MENU -->
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> -</a>
+                        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> -</a>
+                        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Contact</a>
+                        <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid xyz">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- MAIN -->
+                            <div id="map_main">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div><!-- END PANEL LATERAL -->
-
-
-
-        <!-- MAIN -->
-        <div id="map_main">
-
+            <!-- /#page-content-wrapper -->
         </div>
+        <!-- /#wrapper -->
+
+
+        
 
         <!-- Tarjeta Propiedades Clasificadas
         <div id="clasified" class="container">

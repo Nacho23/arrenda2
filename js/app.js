@@ -12,7 +12,7 @@ var isHover
 //FUNCIONES PARICULARES DEL FUNCIONAMIENTO GENERAL
 
 //1.-  Abrir Modal de LOGIN
-function open_modal(){
+function open_modal_login(){
 	$('#modal-login').modal('show');
 }
 
@@ -54,6 +54,11 @@ function initMap(){
 			marker.addListener("click", function(){
 				infoWindow.open(map, marker);
 			});
+            
+            //Al hacer click en el marcador, se desliega el sidebar lateral
+            marker.addListener("click", function(){
+                $("#wrapper").toggleClass("toggled");
+            })
 
 		}, function(){
 			handleLocationError(true, infoWindow, map.getCenter());
@@ -79,3 +84,32 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos){
 		'Error: The Geolocation service failed.':
 		'Error: Your browser doesn\'t support geolocation.');
 }
+
+
+//BARRA LATERA
+$("#menu-toggle-2").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled-2");
+    $('#menu ul').hide();
+});
+
+ function initMenu() {
+  $('#menu ul').hide();
+  $('#menu ul').children('.current').parent().show();
+  //$('#menu ul:first').show();
+  $('#menu li a').click(
+    function() {
+      var checkElement = $(this).next();
+      if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+        return false;
+        }
+      if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+        $('#menu ul:visible').slideUp('normal');
+        checkElement.slideDown('normal');
+        return false;
+        }
+      }
+    );
+  }
+$(document).ready(function() {initMenu();});
+
