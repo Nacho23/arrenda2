@@ -56,6 +56,14 @@
     margin: 5%;
     padding: 2%;
 }
+#btn-api-facebook{
+    width: 50%;
+    padding: 4%;
+    
+    font-size: 18px;
+    color: white;
+    background: #4d50a8;
+}
 /* -------------- END STYLE MODEL's ------------- */
 
 /* --------------------------- STYLE GLYPHICON ------------------------------------ */
