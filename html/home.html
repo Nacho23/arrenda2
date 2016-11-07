@@ -10,6 +10,63 @@
     </head>
     <body>
         
+        <!-- MODAL SIGN IN -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal-signin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">SIGN IN</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-signin" method="post" action="../php/algo.php">
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                            </div>
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                            </div>
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <input type="text" class="form-control" id="password" placeholder="Create a Password">
+                            </div>
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <input type="text" class="form-control" id="repeat_password" placeholder="Repeat a Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthdate_day">Birthdate</label>
+                                <div class="inner-addon right-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" id="birthdate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="check_offer">
+I’d like to receive coupons, promotions, surveys, and updates via email about Arrenda2.
+                            </div>
+                            <div>
+                                <p id="skip">By signing up, I agree to Arrenda2’s <a href="">Terms of Service</a></p>
+                            </div>
+                        </form>
+                    </div>
+                    <button id="btn-signin" type="button" class="btn btn-info" data-dismiss="modal">Sign In</button>
+                    <div class="modal-footer">
+                        <a href="">Already have an Arrenda2 account?</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="open_modal_login();">Log in</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal Signin-->
+        
         <!-- MODAL LOG IN -->
         <div class="modal fade" tabindex="-1" role="dialog" id="modal-login">
             <div class="modal-dialog">
@@ -19,67 +76,52 @@
                         <h4 class="modal-title">LOG IN</h4>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="name">First Name/Family Name</label>
-                                <input type="text" class="form-control" id="name">
+                        <form id="form-login" method="post" action="../php/algo.php">
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
-                            <div class="form-group">
-                                <label for="nickname">Nickname</label>
-                                <input type="text" class="form-control" id="nickname">
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <input type="text" class="form-control" id="password" placeholder="Create a Password">
                             </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password">
-                            </div>
-                            <div class="form-group">
-                                <label for="repeatPassword">Repeat Password</label>
-                                <input type="password" class="form-control" id="repeatPassword">
-                            </div>
-                            <div class="form-group">
-                                <label for="idNumber">ID Number</label>
-                                <input type="text" class="form-control" id="idNumber">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="birthdate_day">Birthdate</label>
-                                        <input type="text" class="form-control" id="birthdate_day" placeholder="dd">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="birthdate_month">Birthdate month</label>
-                                        <input type="text" class="form-control" id="birthdate_month" placeholder="mm">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="birthdate_year">Birthdate year</label>
-                                        <input type="text" class="form-control" id="birthdate_year" placeholder="aaaa">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone/Cell Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="569XXXXAAAA">
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="xxxx@mail.com">
+                            <div>
+                                <a href="" data-dismiss="modal" onclick="open_modal_forgot_password();">Forgot Password?</a>
                             </div>
                         </form>
                     </div>
+                    <button id="btn-login" type="button" class="btn btn-info" data-dismiss="modal">Log In</button>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                        <a href="">Don’t have an account?</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="open_modal_signin();">Sign in</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+        </div><!-- /.modal Login-->
+        
+        <!-- MODAL FORGOT PASSWORD -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal-forgot-password">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Reset Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-forgot-password" method="post" action="../php/algo.php">
+                            <div class="inner-addon right-addon">
+                                <p>Enter the email address associated with your account, and we’ll email you a link to reset your password.</p>
+                            </div>
+                            <div class="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                        </form>
+                    </div>
+                    <button id="btn-forgot-password" type="button" class="btn btn-info" data-dismiss="modal">Send Reset Password</button>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal forgot password-->
 
         <!-- NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -99,22 +141,23 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Help</a></li>
-                        <li><a href="#" onclick="open_modal_login();">Log In</a></li>
+                        <li><a href="#" onclick="open_modal_signin();">Sign in</a></li>
                         <li>
-                          <a class="btn btn-default btn-outline btn-circle collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
+                          <a class="btn btn-default btn-outline btn-circle collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Log in</a>
                         </li>
                     </ul>
                     <div class="nav navbar-nav nav-collapse slide-down collapse" id="nav-collapse2" aria-expanded="false" style="height: 0px;">
-                        <form class="navbar-form navbar-right form-inline" role="form" method="POST">
+                        <form class="navbar-form navbar-right form-inline" role="form" method="POST" action="../php/authenticate.php">
                             <div class="form-group">
                                 <label class="sr-only" for="Email">Email</label>
-                                <input type="email" class="form-control" id="Email" placeholder="Email" autofocus="" required="">
+                                <input type="email" class="form-control" id="Email" placeholder="Email" autofocus="" required>
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="Password">Password</label>
-                                <input type="password" class="form-control" id="Password" placeholder="Password" required="">
+                                <input type="password" class="form-control" id="Password" placeholder="Password" required>
                             </div>
-                            <button type="submit" class="btn btn-success">Sign in</button>
+                            <button type="submit" class="btn btn-success" onclick="">Log in</button>
+                            <a onclick="open_modal_forgot_password();" style="cursor: pointer">Forgot Password?</a>
                         </form>
                     </div>
                 </div><!-- /.navbar-collapse -->
@@ -130,30 +173,30 @@
                         <img id="image-sidebar" src="../images/cabana1.jpg" alt="">
                     </li>
                     <li>
-                        <button type="button" class="btn btn-success btn-lg btn-view-more">View More</button>
+                        <button type="button" class="btn btn-lg btn-view-more">View More</button>
                     </li>
                     <li class="active">
                         <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Description</a>
                         <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                            <p class="texto-il">Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion. Aquí va la descripcion.</p>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> -</a>
                         <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                            <p class="texto-il">>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> -</a>
                         <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                            <p class="texto-il">>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Contact</a>
                         <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                            <p>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
+                            <p class="texto-il">>AHSKJAHSJK KAJHS AKJHAKJSH KJA KJA KAJ SKJ AHKJS AKJ SKJA KJ SA JKSH</p>
                         </ul>
                     </li>
                 </ul>

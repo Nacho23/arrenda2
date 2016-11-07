@@ -11,9 +11,15 @@ var isHover
 
 //FUNCIONES PARICULARES DEL FUNCIONAMIENTO GENERAL
 
-//1.-  Abrir Modal de LOGIN
+//1.-  Abrir Modal en general
 function open_modal_login(){
 	$('#modal-login').modal('show');
+}
+function open_modal_signin(){
+	$('#modal-signin').modal('show');
+}
+function open_modal_forgot_password(){
+	$('#modal-forgot-password').modal('show');
 }
 
 //2.- Abrir Flip Description
