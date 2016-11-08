@@ -4,6 +4,7 @@ var map;
 var marker;
 var infoWindow;
 var map_center;
+var zoom = 13;
 
 //Variables otras
 var isHover
@@ -28,13 +29,22 @@ $("#flip-desc").click(function(){
 });
 
 //FUNCIONES GOOGLE MAPS
+function initialize(){
+    try{
+        initMap();
+    }catch(e){
+        alert("Error al cargar el mapa, recargue la página");
+        console.log(e);
+    }
+}
+
 function initMap(){
 	//Carga mapa básico con las caracteristicas iniciales
-	map_center = new google.maps.LatLng(55.774593, 37.679367);
+	map_center = new google.maps.LatLng(-39.8350246, -73.4459405);
 
 	map = new google.maps.Map(document.getElementById("map_main"), {
 		center: map_center,
-		zoom: 16,
+		zoom: zoom,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 
@@ -51,19 +61,21 @@ function initMap(){
 			map_center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
 			infoWindow.setPosition(pos);
-			infoWindow.setContent('location found');
+            
+            //Contenido del popover de cada lugar
+			infoWindow.setContent('You are here');
 			map.setCenter(pos);
 
 			marker = new google.maps.Marker({map: map, position: pos});
-
-			//Al hacer click en el marcador, se despliega la siguiente información
-			marker.addListener("click", function(){
-				infoWindow.open(map, marker);
-			});
             
-            //Al hacer click en el marcador, se desliega el sidebar lateral
+            //Evento al dar click en el marcador
             marker.addListener("click", function(){
+                //se desliega el sidebar lateral
                 $("#wrapper").toggleClass("toggled");
+                
+                //se despliega el popover sobre la información del lugar
+                infoWindow.open(map, marker);
+
             })
 
 		}, function(){

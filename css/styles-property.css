@@ -1,0 +1,143 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.btn-view-photos{
+    float: left;
+    padding: 2% 5% 2% 5%;
+
+    margin-left: -15%;
+}
+#btn-contact{
+    margin-top: 30px;
+    padding: 15px 60px 15px 60px;
+}
+#container-general{
+    
+    margin: 0x;
+    padding: 0px;
+    width: 97%;
+}
+.img-icon{
+    margin-top: 25px;
+}
+.gallery{
+    margin: 0px;
+}
+
+/* -------------- STYLE MODEL's ------------- */
+#form-signin, #form-login, #form-forgot-password{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#form-signin div, #modal-login div, #modal-forgot-password div{
+    margin-top: 5px;
+}
+#form-signin input, #modal-login input, #modal-forgot-password input{
+    border-radius: 2px;
+    padding: 20px;
+}
+#modal-signin, #modal-login, #modal-forgot-password{
+    min-width: 300px;
+}
+.modal-content{
+    border-radius: 2px;
+}
+#skip{
+    margin-top: 30px;
+    margin-bottom: -20px;
+    font-size: 11px;
+    
+    text-align: center;
+}
+#btn-signin, #btn-login, #btn-forgot-password{
+    width: 90%;
+    margin: 5%;
+    padding: 2%;
+}
+#btn-api-facebook{
+    width: 50%;
+    padding: 4%;
+    
+    font-size: 18px;
+    color: white;
+    background: #4d50a8;
+}
+/* -------------- END STYLE MODEL's ------------- */
+
+/* --------------------------- STYLE GLYPHICON ------------------------------------ */
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+/* --------------------------- END STYLE GLYPHICON ------------------------------------ */
+
+/* ------------------ ESTILO FOOTER -------------------------*/
+.footer{
+    background: #f7f7f7;
+    margin-bottom: 15px;
+}
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     color: #b2b2b2;
+     
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+/* --------------- END ESTILO FOOTER ---------------------*/
+
+
+/* --------------- ESTILO COMENTARIOS ---------------------*/
+
+.comment{
+    background: #f7f7f7;
+    padding: 20px;
+}
+.comment img{
+    margin-right: 20px;
+}
+
+/* --------------- END ESTILO COMENTARIOS ---------------------*/
