@@ -1,0 +1,8 @@
+{% block body %}
+{% if session['logged_in'] %}
+	
+{% else %}
+	{%- include "_nav_withoutlog.html" -%}
+ 	{%- include "_scripts.html" -%}
+{% endif %}
+{% endblock %}

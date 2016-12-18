@@ -1,0 +1,258 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#map_main{
+    position: relative;
+
+	width: 100%;
+	height: 600px;
+}
+.btn-view-more{
+    margin: 10px;
+    
+    border: none;
+    border-radius: 2px;
+    background-color: #9caace;
+}
+.btn-view-more:hover{
+
+    background-color: #7d93d1;
+}
+.texto-il{
+    font-size: 12px;
+    margin-right: 15px;
+    margin-left: 5px;
+    line-height: 20px;
+}
+
+/* -------------- STYLE MODEL's ------------- */
+#form-signin, #form-login, #form-forgot-password{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#form-signin div, #modal-login div, #modal-forgot-password div{
+    margin-top: 5px;
+}
+#form-signin input, #modal-login input, #modal-forgot-password input{
+    border-radius: 2px;
+    padding: 20px;
+}
+#modal-signin, #modal-login, #modal-forgot-password{
+    min-width: 300px;
+}
+.modal-content{
+    border-radius: 2px;
+}
+#skip{
+    margin-top: 30px;
+    margin-bottom: -20px;
+    font-size: 11px;
+    
+    text-align: center;
+}
+#btn-signin, #btn-login, #btn-forgot-password{
+    width: 90%;
+    margin: 5%;
+    padding: 2%;
+}
+#btn-api-facebook{
+    width: 50%;
+    padding: 4%;
+    
+    font-size: 18px;
+    color: white;
+    background: #4d50a8;
+}
+/* -------------- END STYLE MODEL's ------------- */
+
+/* --------------------------- STYLE GLYPHICON ------------------------------------ */
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+/* --------------------------- END STYLE GLYPHICON ------------------------------------ */
+
+/* Toggle Styles */
+ 
+ #wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+ 
+#wrapper.toggled {
+    padding-left: 250px;
+    overflow: scroll;
+}
+
+#image-sidebar{
+    width: 100%;
+    height: 100%;
+    
+    float: left;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: absolute; 
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #f4f4f4;
+    box-shadow: 2px 0px 5px #999;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+ 
+#page-content-wrapper {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    overflow-x: hidden; 
+}
+
+#page-content-wrapper .xyz .col-lg-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.xyz{
+    min-width: 360px;
+}
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: 0px; 
+}
+.fixed-brand{
+    width: auto;
+}
+/* Sidebar Styles */
+ 
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 2px;
+}
+ 
+.sidebar-nav li {
+    text-indent: 15px;
+    line-height: 40px;
+}
+ 
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+ 
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #333;
+    background: rgba(255,255,255,0.2);
+    border-left: red 2px solid;
+}
+ 
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+ 
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+ 
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+ 
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+.no-margin{
+    margin:0;
+}
+ 
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+    .fixed-brand{
+        width: 250px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+ 
+    #sidebar-wrapper {
+        width: 250px;
+    }
+ 
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #wrapper.toggled-2 #sidebar-wrapper {
+        width: 50px;
+    }
+    #wrapper.toggled-2 #sidebar-wrapper:hover {
+        width: 250px;
+    }
+ 
+ 
+    #page-content-wrapper {
+        position: relative;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+ 
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+        padding-left: 250px;
+    }
+    #wrapper.toggled-2 #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+        margin-left: -200px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        width: auto;
+ 
+    }
+}
